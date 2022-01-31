@@ -1,0 +1,25 @@
+function command = set_pwm(device, pwm_value)
+% Sets the PWM of the fan
+% Inputs:
+%  ~ device: serialport object controlling the real world system
+%  ~ pwm_value: A value from 0 to 4095 to set the pulse width modulation of
+%  the actuator
+% Outputs:
+%  ~ action: the control movement determined by the PID controller
+%
+% Ziegler Nicholas PID Tuning Method
+% 1) Set ki and kd to zero then increase kp until oscillation
+% 2) Record the oscillation frequency as f0 and the value of kp as kmax 
+% 3) Set kp = 0.6*kmax, ki = 2*f0 and kd = 0.125/f0
+%
+% Created by:  Kyle Naddeo 1/3/2022
+% Modified by: YOUR NAME and DATE
+
+
+% Force PWM value to be valid
+% pwm_value = % Bound value to limits 0 to 4095
+
+% Send Command
+write(device, command, "string")
+
+end
