@@ -7,7 +7,7 @@ function [y, pipe_percentage] = ir2y(ir)
 %  ~ pipe_percentage: on a scale of 0 (bottom of pipe) to 1 (top of pipe)
 %  where is the ball
 %
-% Created by:  Kyle Naddeo 1/3/2022
+% Created by:  Kyle Naddeo 2/2/2022
 % Modified by: YOUR NAME and DATE
 
 %% Parameters
