@@ -7,7 +7,7 @@ function action = set_pwm(device, pwm_value)
 % Outputs:
 %  ~ action: the control action to change the PWM
 %
-% Created by:  Kyle Naddeo 1/3/2022
+% Created by:  Kyle Naddeo 2/4/2022
 % Modified by: YOUR NAME and DATE
 
 %% Force PWM value to be valid
