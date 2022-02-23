@@ -9,21 +9,25 @@
 close all; clc; 
 
 %% Connect to device
+
 clear device;
 device = serialport('COM5', 19200);
+
 
 %% Parameters
 target      = 0.5;   % Desired height of the ball [m]
 sample_rate = 0.25;  % Amount of time between controll actions [s]
 
 %% Give an initial burst to lift ball and keep in air
+
 set_pwm(device, 5000)
 pause(5)
 [ir,~,~,~] = read_data(device);
 %waitbar(5)
+
 set_pwm(device, 5000); % Initial burst to pick up ball
 pause(0.1) % Wait 0.1 seconds
-% set_pwm(add_proper_args); % Set to lesser value to level out somewhere in
+set_pwm(device, 2000); % Set to lesser value to level out somewhere in
 % the pipe
 
 %% Initialize variables
