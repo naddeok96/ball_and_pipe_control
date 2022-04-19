@@ -8,7 +8,7 @@
 %  where is the ball
 %
 % Created by:  Kyle Naddeo 2/2/2022
-% Modified by: YOUR NAME and DATE
+% Modified by: Patrick ORourke, Thomas Stanek, Daniel Millar and 4/19/2022
 
 %% Parameters
  ir_bottom =  956; % IR reading when ball is at bottom of pipe
@@ -22,4 +22,4 @@ IrBound= max(min(ir,956),60);
 %% Set
 pipe_percentage = 1-((IrBound-ir_top)/(ir_bottom-ir_top));
  y = y_top*pipe_percentage;
-
+%Normalizes y
