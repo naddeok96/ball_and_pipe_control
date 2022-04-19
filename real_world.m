@@ -7,6 +7,7 @@
 
 %% Start fresh
 close all; clc; 
+OldY=0;
 
 %% Connect to device
 
@@ -31,7 +32,7 @@ set_pwm(device, 2000); % Set to lesser value to level out somewhere in
 % the pipe
 
 %% Initialize variables
-action = 2000; % Same value of last set_pwm   
+x = 2000; % Same value of last set_pwm   
 error       = 0;
 error_sum   = 0;
 
@@ -40,7 +41,7 @@ while true
     %% Read current height
     [ir,~,~,~] = read_data(device);
     y = ir2y(ir); % Convert from IR reading to distance from bottom [m]
-    
+
     %% Calculate errors for PID controller
     error_prev = error;             % D
     error      = target - y;        % P
@@ -48,8 +49,9 @@ while true
     
     %% Control
     prev_action = action;
-    action = pid_controller; % Come up with a scheme no answer is right but do something
-    set_pwm(device, action); % Implement action
+    action  = plc_controller(action, y, OldY); % Come up with a scheme no answer is right but do something
+    action = set_pwm(device, action); % Implement action
+    OldY=y;
         
     % Wait for next sample
     pause(sample_rate)

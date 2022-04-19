@@ -1,4 +1,4 @@
-function action = set_pwm(device, pwm_value)
+function [bounded]= set_pwm(device, pwm_value)
 %% Sets the PWM of the fan
 % Inputs:
 %device= "COM5"; %serialport object controlling the real world system
@@ -6,7 +6,7 @@ function action = set_pwm(device, pwm_value)
 %  the actuator
 % Outputs:
 %  ~ action: the control action to change the PWM
-%
+
 
 % Created by:  Kyle Naddeo 1/3/2022
 % Modified by: Patrick O'Rourke 2/1/2022
@@ -17,10 +17,10 @@ function action = set_pwm(device, pwm_value)
 
 
 %% Force PWM value to be valid
-x= max(min(pwm_value,4095),0);
-action = strcat("P", sprintf("%04.f",x));
+bounded= max(min(pwm_value,4095),0);
+action = strcat("P", sprintf("%04.f",bounded));
 
 %% Send Command
-write(device,action,"string");
+write(device,action ,"string");
 
 end
