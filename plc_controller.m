@@ -27,7 +27,7 @@ elseif(.625>y && y<.675)%Entrance to inner ifs
             new_pwm = new_pwm;
         end
 end
-pause(.1);
+pause(.1); %Outputs used values to see what the code is using for testing
 disp (new_pwm)
 disp (y)
 %read speed and based off the speed set by how much pwm is adjusted
@@ -35,7 +35,7 @@ disp (y)
 t = 0.25; %time between readings
 vel = 0;
 
-%vel = (y-OldY)/t;
+%vel = (y-OldY)/t; %Attempt at velocity for pwm adjustment
 %new_pwm = (vel/.95)*new_pwm;
 %pause(.1)
 end
