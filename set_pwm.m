@@ -12,7 +12,7 @@ function [bounded]= set_pwm(device, pwm_value)
 % Modified by: Patrick O'Rourke 2/1/2022
 =======
 % Created by:  Kyle Naddeo 2/4/2022
-% Modified by: YOUR NAME and DATE
+% Modified by: Patrick ORourke, Thomas Stanek, Daniel Millar and 4/19/2022
 
 
 
