@@ -6,6 +6,7 @@ MATLAB codes to open serial communication with a ball and pipe system. The syste
 README.md
 
 SCFBA Specification Sheet.pdf
+In this file, the ball and pipe instruction manual is shown. Every bit of information that was needed to complete thing project 
 
 ir2y.m
 The file was originally provided to the group by Kyle Naddeo, but adjustments had to be made according to the PLC control system.
