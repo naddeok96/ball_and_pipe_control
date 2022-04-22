@@ -4,10 +4,10 @@ MATLAB codes to open serial communication with a ball and pipe system. The syste
 .gitignore
 
 README.md
-This file has a brief description of every file in this project. After reading tis file, the reader will have a basic understanding of what actions the specific file is performing.
+This file has a brief description of every file in this project. After reading this file, the reader will have a basic understanding of what actions the specific files are performing.
 
 SCFBA Specification Sheet.pdf
-In this file, the ball and pipe instruction manual is shown. Every bit of information that was needed to complete this project can be found in this manual.
+In this file, the ball and pipe instruction manual is shown. All the foundational information needed to complete this project can be found in this manual.
 
 ir2y.m
 The file was originally provided to the group by Kyle Naddeo, but adjustments had to be made according to the PLC control system. This file takes the reading from the sensor and converts that value to meters, so the position th eball is at cna be more easily understood. The parameters section had to be filled out by the group and was found through multiple tests.
