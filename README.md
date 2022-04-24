@@ -1,6 +1,8 @@
 # Ball and Pipe Control System
 MATLAB codes to open serial communication with a ball and pipe system. The system is made of a vertical cylinder with a ping pong ball controlled by a fan on the bottom and height measured by a time of flight sensor on top. The objective is to balance the ball at a target altitude. All files besides README.m, SCFBA Specification Sheet.pdf, and plc_controller.m were provided by Kyle Naddeo, but the group adjusted them according to our PLC design.
 
+PLC is a type of machine learning in which the outputs are changed continously through the measurements of inputs and code that controls the interaction between inputs and outputs. For this project, the input comes from the measurement of the height sensor, the program is plc_controller.m file, and the output is the fan strength, which is controlled by PWM.
+
 .gitignore
 
 README.md
@@ -10,7 +12,7 @@ SCFBA Specification Sheet.pdf
 In this file, the ball and pipe instruction manual is shown. All the foundational information needed to complete this project can be found in this manual.
 
 ir2y.m
-This file takes the reading from the sensor and converts that value to meters, so the position th eball is at cna be more easily understood. The parameters section had to be filled out by the group and was found through multiple tests.
+This file takes the reading from the sensor and converts that value to meters, so the position the ball is at can be more easily understood. The parameters section had to be filled out by the group and was found through multiple tests.
 
 plc_controller.m
 This file contains the groups PLC controller that was used in the project to control the position of the ball and pipe system. The position of the ball is controlled by the fan speed, which is adjusted according to where the ball is located in the pipe and changes to the pwm(fan speed) based on this position. Right now, the code is set up to where the ball will end up at a very specified position and stay there. The position all the way at the top of the pipe is equivalent to 1, so according to this code, the ball will rest between .6 and .8 meters up the pipe.
