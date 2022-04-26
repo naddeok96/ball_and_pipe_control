@@ -20,8 +20,8 @@ target      = 0.5;   % Desired height of the ball [m]
 sample_rate = 0.25;  % Amount of time between controll actions [s]
 
 %% Give an initial burst to lift ball and keep in air
-
-set_pwm(device, 5000)
+action = 5000;
+set_pwm(device, action)
 pause(5)
 [ir,~,~,~] = read_data(device);
 %waitbar(5)
