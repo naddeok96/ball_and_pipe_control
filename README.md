@@ -21,7 +21,7 @@ read_data.m
 In this file, data is taken from the sensor and turned into a string. This string is then translated into a double, with a specific data value assigned to it.
 
 real_world.m
-This is the file that should be run to make the entire project perform. Real world performs the actions that it implies. This file controls the fan on he bottom of the pipe. An initial purst is put into this file so that the readings will start when the ball is already in the air. From the inital burst, the height is read continuously. The files read_data.m, plc_controller.m, ir2y.m, and set_pwm.m are all called in real_world.m, so this file could also be called main.m.
+This is the file that should be run to make the entire project perform. Real world performs the actions that it implies. This file controls the fan on he bottom of the pipe. An initial burst is put into this file so that the readings will start when the ball is already in the air. From the inital burst, the height is read continuously. The files read_data.m, plc_controller.m, ir2y.m, and set_pwm.m are all called in real_world.m, so this file could also be called main.m.
 
 set_pwm.m
 Since the PWM value come sometimes be invalid, bounds are created to prevent this from happening. The value of PWM that is sent to the fan can be sent because of this file.
