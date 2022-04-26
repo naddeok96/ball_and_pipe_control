@@ -1,7 +1,7 @@
 # Ball and Pipe Control System
-MATLAB codes to open serial communication with a ball and pipe system. The system is made of a vertical cylinder with a ping pong ball controlled by a fan on the bottom and height measured by a time of flight sensor on top. The objective is to balance the ball at a target altitude. All files besides README.m, SCFBA Specification Sheet.pdf, and plc_controller.m were provided by Kyle Naddeo, but the group adjusted them according to our PLC design.
+MATLAB codes to open serial communication with a ball and pipe system. The system is made of a vertical cylinder with a ping pong ball controlled by a fan on the bottom and height measured by a time of flight sensor on top. The objective is to balance the ball at a target altitude. To acomplish this objective, the group chose a PLC controller, which will be explained more in depth. All files besides README.m, SCFBA Specification Sheet.pdf, and plc_controller.m were provided by Kyle Naddeo, but the group adjusted them according to our PLC design.
 
-PLC is a type of machine learning in which the outputs are changed continously through the measurements of inputs and code that controls the interaction between inputs and outputs. For this project, the input comes from the measurement of the height sensor, the program is plc_controller.m file, and the output is the fan strength, which is controlled by PWM.
+PLC is a type of machine learning in which the outputs are changed continously through the measurements of inputs and code that controls the interaction between inputs and outputs. For this project, the input comes from the measurement of the height sensor, the program is plc_controller.m file, and the output is the fan strength, which is controlled by PWM. The plc_controller.m file code can be changed, based on where the user wants the ball to hover. A range is given in this code where the ball will stop, though it might increase and decrease slightly to adjust itself.
 
 .gitignore
 
@@ -21,7 +21,7 @@ read_data.m
 In this file, data is taken from the sensor and turned into a string. This string is then translated into a double, with a specific data value assigned to it.
 
 real_world.m
-Real world performs that actions that it implies. This file controls the fan on he bottom of the pipe. An initial purst is put into this file so that the readings will start when the ball is already in the air. From the inital urst, the height is read continuously. The files read_data.m, plc_controller.m, ir2y.m, and set_pwm.m are all called in real_world.m, so this file could also be called main.m.
+This is the file that should be run to make the entire project perform. Real world performs the actions that it implies. This file controls the fan on he bottom of the pipe. An initial purst is put into this file so that the readings will start when the ball is already in the air. From the inital burst, the height is read continuously. The files read_data.m, plc_controller.m, ir2y.m, and set_pwm.m are all called in real_world.m, so this file could also be called main.m.
 
 set_pwm.m
 Since the PWM value come sometimes be invalid, bounds are created to prevent this from happening. The value of PWM that is sent to the fan can be sent because of this file.
